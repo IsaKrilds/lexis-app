@@ -1,0 +1,35 @@
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    project: './tsconfig.json',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  env: {
+    browser: true,
+    amd: true,
+    node: true,
+  },
+  extends: [
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended', // Make sure this is always the last element in the array.
+  ],
+  plugins: ['simple-import-sort', 'prettier'],
+  rules: {
+    'prettier/prettier': 'warn',
+    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
+    'import/prefer-default-export': 'off',
+  },
+};
