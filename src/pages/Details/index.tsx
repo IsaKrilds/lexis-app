@@ -1,15 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import { CardContainer, Container } from './styles';
+import { Container } from './styles';
 import CarouselItem from '../../components/CarouselItem';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import bkg1 from '../../assets/images/bkg-dark-1.png';
-import bkg2 from '../../assets/images/bkg-dark-2.png';
-import CardItem from '../../components/CardItem';
-import { CardData } from './utils';
-import CategoryBar from '../../components/CategoryBar';
+import bkg1 from '../../assets/images/bkg-light-1.png';
+import bkg2 from '../../assets/images/bkg-light-2.png';
 
-const Home: React.FC = () => {
+const Details: React.FC = () => {
   return (
     <Container>
       <Carousel
@@ -24,7 +20,7 @@ const Home: React.FC = () => {
           subtitle="O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos
           e acontecimentos relevantes de uma empresa desde seu ano de fundação"
           value="40,00"
-          theme="dark"
+          theme="light"
           background={bkg1}
         />
         <CarouselItem
@@ -32,18 +28,12 @@ const Home: React.FC = () => {
           subtitle="O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos
           e acontecimentos relevantes de uma empresa desde seu ano de fundação"
           value="40,00"
-          theme="dark"
+          theme="light"
           background={bkg2}
         />
       </Carousel>
-      <CategoryBar />
-      <CardContainer>
-        {CardData.map((item) => {
-          return <CardItem {...item} />;
-        })}
-      </CardContainer>
     </Container>
   );
 };
 
-export default Home;
+export default Details;

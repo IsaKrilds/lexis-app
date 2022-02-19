@@ -20,6 +20,10 @@ export const BannerContainer = styled.div<{ image: any }>`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
+  @media (max-width: 480px) {
+    padding: ${({ theme }) => theme.spacing(4)}px ${({ theme }) => theme.spacing(5)}px;
+  }
 `;
 
 export const StyledButton = styled(Button)`
@@ -39,6 +43,10 @@ export const TypographyContainer = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: start;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const HeaderTypographyContainer = styled(TypographyContainer)`
