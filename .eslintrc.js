@@ -31,5 +31,11 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/no-non-null-assertion': 0,
     'import/prefer-default-export': 'off',
+    'no-console': 'off',
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
 };
