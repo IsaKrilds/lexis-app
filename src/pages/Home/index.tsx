@@ -29,10 +29,6 @@ const Home: React.FC = () => {
     }
   }, [activeCategory]);
 
-  console.log(activeCategory);
-  console.log(data);
-
-
   return (
     <Container>
       <Carousel

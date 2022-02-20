@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Typography } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
-import { Container, ContentContainer, WrapContainer, TitleContainer } from './styles';
+import { useHistory, useParams } from 'react-router-dom';
+import {
+  Container,
+  ContentContainer,
+  WrapContainer,
+  TitleContainer,
+  StyledIcon,
+  StyledGoBackButton,
+  ItemContainer,
+  StyledCarousel,
+  CarouselContainer,
+  TypographyContainer,
+  PriceContainer,
+  StyledButton,
+} from './styles';
 import CarouselItem from '../../components/CarouselItem';
 import bkg1 from '../../assets/images/bkg-light-1.png';
 import bkg2 from '../../assets/images/bkg-light-2.png';
 import { CardData } from '../Home/utils';
+import DetailsCarouselItem from '../../components/DetailsCarouselItem';
 
 const Details: React.FC = () => {
   const [cardData, setCardData] = useState<any>();
   const { id } = useParams<any>();
+  const history = useHistory();
 
   useEffect(() => {
     const data = CardData.filter((item) => {
@@ -19,8 +34,6 @@ const Details: React.FC = () => {
 
     setCardData(data[0]);
   }, []);
-
-  console.log(cardData);
 
   if (!cardData) {
     return null;
@@ -55,8 +68,52 @@ const Details: React.FC = () => {
       <ContentContainer>
         <WrapContainer>
           <TitleContainer>
-            <Typography>{cardData.title}</Typography>
+            <StyledGoBackButton onClick={() => history.goBack()}>
+              <StyledIcon>chevron_left</StyledIcon>
+              <Typography variant="h6">{cardData.title}</Typography>
+            </StyledGoBackButton>
           </TitleContainer>
+
+          <CarouselContainer>
+            <StyledCarousel
+              infiniteLoop
+              emulateTouch
+              showStatus={false}
+              showThumbs={false}
+              showIndicators={false}>
+              <ItemContainer>
+                <DetailsCarouselItem />
+              </ItemContainer>
+              <ItemContainer>
+                <DetailsCarouselItem />
+              </ItemContainer>
+            </StyledCarousel>
+          </CarouselContainer>
+          <TypographyContainer>
+            <Typography variant="subtitle2">
+              Bacon ipsum dolor amet shankle venison pork loin prosciutto, tail ham hock
+              turducken pastrami meatball sausage. Burgdoggen pig kevin, turkey meatloaf
+              beef ribs biltong ham.Bacon ipsum dolor amet shankle venison pork loin
+              prosciutto, tail ham hock turducken pastrami meatball sausage. Burgdoggen
+              pig kevin, turkey meatloaf beef ribs biltong ham.
+            </Typography>
+          </TypographyContainer>
+          <TypographyContainer>
+            <Typography variant="subtitle2">
+              Bacon ipsum dolor amet shankle venison pork loin prosciutto, tail ham hock
+              turducken pastrami meatball sausage. Burgdoggen pig kevin, turkey meatloaf
+              beef ribs biltong ham.Bacon ipsum dolor amet shankle venison pork loin
+              prosciutto, tail ham hock turducken pastrami meatball sausage. Burgdoggen
+              pig kevin, turkey meatloaf beef ribs biltong ham.
+            </Typography>
+          </TypographyContainer>
+          <PriceContainer>
+            <Typography variant="subtitle2">R$</Typography>
+            <Typography variant="h4">40,00</Typography>
+            <StyledButton>
+              <Typography variant="subtitle2">Habilitar</Typography>
+            </StyledButton>
+          </PriceContainer>
         </WrapContainer>
       </ContentContainer>
     </Container>
