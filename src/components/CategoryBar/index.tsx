@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography } from '@material-ui/core';
-import { Container, StyledCategoryButton, StyledIcon, Test } from './styles';
+import { Container, StyledCategoryButton, StyledIcon } from './styles';
 import { Categories } from './utils';
 
 interface ButtonProps {
