@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { CardContainer, Container } from './styles';
 import CarouselItem from '../../components/CarouselItem';
@@ -10,6 +10,29 @@ import { CardData } from './utils';
 import CategoryBar from '../../components/CategoryBar';
 
 const Home: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState('Todos');
+  const [data, setData] = useState(CardData);
+
+  const onClick = (name: string) => {
+    setActiveCategory(name);
+  };
+
+  useEffect(() => {
+    if (activeCategory === 'Todos') {
+      setData(CardData);
+    } else {
+      const newData = CardData.filter((item) => {
+        return item.title === activeCategory;
+      });
+
+      setData(newData);
+    }
+  }, [activeCategory]);
+
+  console.log(activeCategory);
+  console.log(data);
+
+
   return (
     <Container>
       <Carousel
@@ -36,10 +59,10 @@ const Home: React.FC = () => {
           background={bkg2}
         />
       </Carousel>
-      <CategoryBar />
+      <CategoryBar onClick={onClick} />
       <CardContainer>
-        {CardData.map((item) => {
-          return <CardItem {...item} />;
+        {data.map((item) => {
+          return <CardItem key={item.id} {...item} />;
         })}
       </CardContainer>
     </Container>

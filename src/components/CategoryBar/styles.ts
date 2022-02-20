@@ -13,16 +13,28 @@ export const Container = styled.div`
   margin-top: ${({ theme }) => theme.spacing(5)}px;
 `;
 
-export const StyledCategoryButton = styled(Button)`
-  background-color: #f4f4f4;
+export const StyledCategoryButton = styled(Button)<{ active: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: gray;
+  color: ${(props) => (props.active ? props.theme.palette.common.white : 'grey')};
   width: ${({ theme }) => theme.spacing(20)}px;
   min-height: ${({ theme }) => theme.spacing(10)}px;
-  border-radius: ${({ theme }) => theme.spacing(0.5)}px;
+  border-radius: ${({ theme }) => theme.spacing(0)}px;
+  background-color: ${(props) =>
+    props.active ? props.theme.palette.warning.dark : '#f0f0f0'};
+
+  .MuiButton-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .material-icons {
+    color: ${(props) => (props.active ? props.theme.palette.common.white : 'grey')};
+  }
 
   :hover {
     background-color: ${({ theme }) => theme.palette.warning.dark};
@@ -36,7 +48,7 @@ export const StyledCategoryButton = styled(Button)`
 
 export const StyledIcon = styled(Icon)`
   color: gray;
-  font-size: ${({ theme }) => theme.spacing(4)}px;
+  font-size: ${({ theme }) => theme.spacing(3.5)}px;
 
   :hover {
     color: white;

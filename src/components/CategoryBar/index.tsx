@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography } from '@material-ui/core';
 import { Container, StyledCategoryButton, StyledIcon } from './styles';
 import { Categories } from './utils';
 
-const CategoryBar: React.FC = () => {
+interface ButtonProps {
+  onClick: (name: string) => void;
+}
+
+const CategoryBar: React.FC<ButtonProps> = ({ onClick }) => {
+  const [isActive, setIsActive] = useState('Todos');
+
+  const handleActiveButton = (name: string) => {
+    onClick(name);
+    setIsActive(name);
+
+    return name;
+  };
+
   return (
     <Container>
       {Categories.map((item) => {
         return (
-          <StyledCategoryButton>
+          <StyledCategoryButton
+            active={isActive === item.name}
+            key={item.id}
+            onClick={() => handleActiveButton(item.name)}>
             <StyledIcon>{item.icon}</StyledIcon>
             <Typography variant="caption">{item.name}</Typography>
           </StyledCategoryButton>

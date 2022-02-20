@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import { Container } from './styles';
+import { Typography } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
+import { Container, ContentContainer, WrapContainer, TitleContainer } from './styles';
 import CarouselItem from '../../components/CarouselItem';
 import bkg1 from '../../assets/images/bkg-light-1.png';
 import bkg2 from '../../assets/images/bkg-light-2.png';
+import { CardData } from '../Home/utils';
 
 const Details: React.FC = () => {
+  const [cardData, setCardData] = useState<any>();
+  const { id } = useParams<any>();
+
+  useEffect(() => {
+    const data = CardData.filter((item) => {
+      return item.id === Number(id);
+    });
+
+    setCardData(data[0]);
+  }, []);
+
+  console.log(cardData);
+
+  if (!cardData) {
+    return null;
+  }
+
   return (
     <Container>
       <Carousel
@@ -32,6 +52,13 @@ const Details: React.FC = () => {
           background={bkg2}
         />
       </Carousel>
+      <ContentContainer>
+        <WrapContainer>
+          <TitleContainer>
+            <Typography>{cardData.title}</Typography>
+          </TitleContainer>
+        </WrapContainer>
+      </ContentContainer>
     </Container>
   );
 };
