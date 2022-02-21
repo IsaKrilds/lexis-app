@@ -90,13 +90,7 @@ const Details: React.FC = () => {
             </StyledCarousel>
           </CarouselContainer>
           <TypographyContainer>
-            <Typography variant="subtitle2">
-              Bacon ipsum dolor amet shankle venison pork loin prosciutto, tail ham hock
-              turducken pastrami meatball sausage. Burgdoggen pig kevin, turkey meatloaf
-              beef ribs biltong ham.Bacon ipsum dolor amet shankle venison pork loin
-              prosciutto, tail ham hock turducken pastrami meatball sausage. Burgdoggen
-              pig kevin, turkey meatloaf beef ribs biltong ham.
-            </Typography>
+            <Typography variant="subtitle2">{cardData.subtitle}</Typography>
           </TypographyContainer>
           <TypographyContainer>
             <Typography variant="subtitle2">
@@ -109,7 +103,7 @@ const Details: React.FC = () => {
           </TypographyContainer>
           <PriceContainer>
             <Typography variant="subtitle2">R$</Typography>
-            <Typography variant="h4">40,00</Typography>
+            <Typography variant="h4">{cardData.value}</Typography>
             <StyledButton>
               <Typography variant="subtitle2">Habilitar</Typography>
             </StyledButton>

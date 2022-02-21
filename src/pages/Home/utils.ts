@@ -12,7 +12,7 @@ export const CardData = [
     title: 'Reguladores',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '40,99',
     icon: 'account_balance',
   },
   {
@@ -20,7 +20,7 @@ export const CardData = [
     title: 'Sócio Ambiental',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '39,99',
     icon: 'park',
   },
   {
@@ -28,7 +28,7 @@ export const CardData = [
     title: 'Jurídico',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '19,99',
     icon: 'gavel',
   },
   {
@@ -36,7 +36,7 @@ export const CardData = [
     title: 'Listas Restritivas',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '59,99',
     icon: 'block',
   },
   {
@@ -44,7 +44,7 @@ export const CardData = [
     title: 'Mídia / Internet',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '79,99',
     icon: 'public',
   },
   {
@@ -52,7 +52,7 @@ export const CardData = [
     title: 'Bens e Imóveis',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '79,99',
     icon: 'diamond',
   },
   {
@@ -60,7 +60,7 @@ export const CardData = [
     title: 'Cadastro',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '49,99',
     icon: 'boy',
   },
   {
@@ -68,7 +68,7 @@ export const CardData = [
     title: 'Financeiro',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '49,99',
     icon: 'savings',
   },
   {
@@ -76,7 +76,7 @@ export const CardData = [
     title: 'Mídia / Internet',
     subtitle:
       'O aplicativo Histórico Empresarial permite ao usuário ter aceso a todos os fatos e acontecimentos relevantes de uma empresa desde seu ano de fundação',
-    value: '29,99',
+    value: '39,99',
     icon: 'public',
   },
   {
